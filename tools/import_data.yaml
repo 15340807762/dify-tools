@@ -1,0 +1,111 @@
+identity:
+  name: test
+  author: dbc
+  label:
+    en_US: Import Data
+    zh_Hans: 导入数据
+      #pt_BR: test
+description:
+  human:
+    en_US: Import Data
+    zh_Hans: 导入数据
+  llm: A tool to test connectivity to a GaussDB instance by instance ID.
+parameters:
+  - name: host
+    type: string
+    required: true
+    label:
+      en_US: Database Host
+      zh_Hans: 数据库主机地址
+    human_description:
+      en_US: GaussDB host address
+      zh_Hans: GaussDB数据库主机地址
+    llm_description: GaussDB host address
+    form: form
+
+  - name: port
+    type: number
+    required: true
+    label:
+      en_US: Database Port
+      zh_Hans: 数据库端口
+    human_description:
+      en_US: GaussDB port number
+      zh_Hans: GaussDB数据库端口号
+    llm_description: GaussDB port number
+    form: form
+
+  - name: user
+    type: string
+    required: true
+    label:
+      en_US: Username
+      zh_Hans: 用户名
+    human_description:
+      en_US: Username for database connection
+      zh_Hans: 数据库连接用户名
+    llm_description: Username for database connection
+    form: form
+
+  - name: password
+    type: string
+    required: true
+    label:
+      en_US: Password
+      zh_Hans: 密码
+    human_description:
+      en_US: Password for database connection
+      zh_Hans: 数据库连接密码
+    llm_description: Password for database connection
+    form: form
+
+  - name: database_name
+    type: string
+    required: true
+    label:
+      en_US: Database Name
+      zh_Hans: 数据库名称
+    human_description:
+      en_US: Target database name
+      zh_Hans: 目标数据库名称
+    llm_description: Target database name
+    form: form
+
+  - name: schema
+    type: string
+    required: false
+    label:
+      en_US: SchemaName
+      zh_Hans: 模式名称
+    human_description:
+      en_US: Targetschema(e.g., public, sys).Default is 'public'.
+      zh_Hans: 目标模式（例如public、sys），默认是'public'
+    llm_description: Targetschemafor the SQL execution
+    form: form
+
+  - name: import_type
+    type: string
+    required: true
+    label:
+      en_US: Import Type
+      zh_Hans: 导入类型
+    human_description:
+      en_US: Type of import operation, e.g., 'sql'
+      zh_Hans: 导入操作类型，例如sql
+    llm_description: Type of import operation, e.g., 'sql'
+    form: form
+
+  - name: file_content
+    type: string
+    required: true
+    label:
+      en_US: File Content
+      zh_Hans: 文件内容
+    human_description:
+      en_US: SQL file content to import
+      zh_Hans: 要导入的SQL文件内容
+    llm_description: SQL file content to import
+    form: form
+extra:
+  python:
+    source: tools/import_data.py

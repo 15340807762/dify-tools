@@ -1,0 +1,99 @@
+identity:
+  author: dbc
+  name: huawei-cloud-gaussdb
+  label:
+    en_US: huawei-cloud-gaussdb
+    zh_Hans: huawei-cloud-gaussdb
+    pt_BR: huawei-cloud-gaussdb
+  description:
+    en_US: Provide common operations for connecting the Dify application to Huawei Cloud GaussDB.
+    zh_Hans: 提供dify应用连接华为云GaussDB的常用操作
+    pt_BR: 提供dify应用连接华为云GaussDB的常用操作
+  icon: icon.svg
+
+credentials_for_provider:
+  #dify_endpoint:
+  #  type: text-input
+  #  required: true
+  #  label:
+  #    en_US: DIFY Endpoint
+  #    zh_Hans: DIFY 服务地址
+  #  placeholder:
+  #    en_US: Please input your DIFY endpoint (e.g. http://localhost:5001)
+  #    zh_Hans: 请输入你的 DIFY 服务地址 (例如 http://localhost:5001)
+  #  help:
+  #    en_US: The endpoint address of your Dify deployment
+  #    zh_Hans: 你部署的 Dify 服务访问地址
+  #  url: https://docs.dify.ai
+
+  access_key_id:
+    type: text-input
+    required: true
+    label:
+      en_US: AccessKeyID
+      zh_Hans: AccessKeyID
+    placeholder:
+      en_US: Please input your Huawei Cloud AccessKeyID
+      zh_Hans: 请输入你的 华为云 AccessKeyID
+    help:
+      en_US: Get your AccessKeyID from Huawei Cloud
+      zh_Hans: 从华为云获取您的 AccessKeyID
+    url: https://support.huaweicloud.com/sdk-python-devg-obs/obs_22_0500.html
+
+  secret_access_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: SecretAccessKey
+      zh_Hans: SecretAccessKey
+    placeholder:
+      en_US: Please input your Huawei Cloud SecretAccessKey
+      zh_Hans: 请输入你的 华为云 SecretAccessKey
+    help:
+      en_US: Get your SecretAccessKey from Huawei Cloud
+      zh_Hans: 从华为云获取您的 SecretAccessKey
+    url: https://support.huaweicloud.com/sdk-python-devg-obs/obs_22_0500.html
+
+  project_id:
+    type: text-input
+    required: true
+    label:
+      en_US: Project ID
+      zh_Hans: 项目ID
+    placeholder:
+      en_US: Please input your Huawei Cloud Project ID
+      zh_Hans: 请输入你的 华为云 Project ID
+    help:
+      en_US: Get your Project ID from Huawei Cloud
+      zh_Hans: 从华为云获取您的 Project ID
+    url: https://support.huaweicloud.com/usermanual-iam/iam_17_0002.html
+
+  server_url:
+    default: https://rds.cn-north-4.myhuaweicloud.com
+    required: true
+    type: text-input
+    label:
+      en_US: ServerUrl
+      zh_Hans: 服务地址
+    placeholder:
+      en_US: Please input your Huawei Cloud RDS Server URL
+      zh_Hans: 请输入你的 华为云 RDS 服务地址
+    help:
+      en_US: Get your Server URL from Huawei Cloud RDS
+      zh_Hans: 从华为云获取您的 RDS 服务地址
+    url: https://support.huaweicloud.com/usermanual-rds/rds_06_0033.html
+
+tools:
+  #- tools/create_instance.yaml
+  #- tools/delete_instance.yaml
+  #- tools/test_connection.yaml
+  #- tools/login.yaml
+  #- tools/create_database.yaml
+  #- tools/delete_database.yaml
+   - tools/import_data.yaml
+   - tools/query.yaml
+
+extra:
+  python:
+    source: provider/huawei-cloud-gaussdb.py
+
